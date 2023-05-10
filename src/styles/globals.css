@@ -1,0 +1,350 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    background-color: #000;
+}
+
+.pane_top-pane{
+    background-color: hsl(225, 6%, 25%);
+}
+.pane{
+    height: 50vh;
+    display: flex;
+}
+.editor-container{
+    flex-grow: 1;
+    flex-basis: 0;
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+    background-color: hsl(225, 6%, 25%);
+}
+
+.collapsed{
+    flex-grow: 0;
+}
+
+.collapsed .CodeMirror-scroll{
+    position: absolute;
+    overflow: hidden !important;
+}
+
+.expand-collapse-btn{
+    margin-left: .5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.editor-title{
+    display: flex;
+    justify-content: space-between;
+    background-color: hsl(225, 6%, 13%);
+    color: white;
+    padding: .5rem .5rem .5rem 1rem;
+    border-top-right-radius: .5rem;
+    border-top-left-radius: .5rem;
+}
+
+.CodeMirror {
+    height: 100% !important;
+}
+
+.code-mirror-wrapper{
+    flex-grow: 1;
+    border-top-right-radius: .5rem;
+    border-top-left-radius: .5rem;
+    overflow: hidden;
+}
+
+.header-container{
+    width: 100%;
+    padding: 10px;
+    background-color: gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border-bottom: 1px solid black; */
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px !important;
+}
+.header-right-box{
+    margin-right: 2rem;
+}
+
+.header-right-box select {
+    outline: none;
+    border: none;
+    padding: .5rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
+}
+
+/* #6b87e2  */
+
+#sel-1:hover{
+    background: #6b87e2 !important;
+    box-shadow: 0 0 5px #6b87e2, 0 0 25px #6b87e2, 0 0 50px #6b87e2, 0 0 200px #6b87e2 !important;
+}
+
+.theme-dark{
+    background-color: #1a202c !important;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
+    color: white !important;
+}
+
+.theme-light{
+    background-color: #eee !important;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
+    color: black !important;
+}
+
+/* .theme-dark-outline{
+    
+} */
+
+.responsive-iframe {
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* .customResizeBorder {
+    cursor: ew-resize;
+    width: 5px;
+    background: gray;
+    display: flex;
+    z-index: 99999;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    overflow: visible;
+  }
+  
+  .customHandle {
+    cursor: ew-resize;
+    width: 10px;
+    height: 30px;
+    margin: 0px -5px;
+    background: lightblue;
+    border: 2px solid gray;
+    border-radius: 2px;
+    text-align: center;
+    z-index: 99999;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  } */
+
+  @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
+  /* Navbar */
+  .nav {
+    height: 50px;
+    width: 100%;
+    background-color: #4d4d4d;
+    position: relative;
+    z-index: 15;
+  }
+  
+  .nav > .nav-header {
+    display: inline;
+  }
+  
+  .nav > .nav-header > .nav-title {
+    display: inline-block;
+    font-size: 22px;
+    color: #fff;
+    padding: 10px 10px 10px 10px;
+    font-family: 'Bruno Ace SC', cursive !important;
+  }
+  
+  .nav > .nav-btn {
+    display: none;
+  }
+  
+  .nav > .nav-links {
+    display: inline;
+    float: right;
+    font-size: 18px;
+  }
+  
+  .nav > .nav-links > a {
+    display: inline-block;
+    padding: 13px 10px 13px 10px;
+    text-decoration: none;
+    color: #efefef;
+  }
+  
+  .nav > .nav-links > a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  .nav > #nav-check {
+    display: none;
+  }
+  
+  @media (max-width:600px) {
+    .nav{
+        width: 106%;
+    }
+    .nav > .nav-btn {
+      display: inline-block;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+    }
+    .nav > .nav-btn > label {
+      display: inline-block;
+      width: 50px;
+      height: 25px;
+      padding: 13px;
+    }
+    .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    .nav > .nav-btn > label > span {
+      display: block;
+      width: 25px;
+      height: 10px;
+      border-top: 2px solid #eee;
+    }
+    .nav > .nav-links {
+      position: absolute;
+      display: block;
+      width: 100%;
+      background-color: #1a202c;
+      height: 0px;
+      transition: all 0.3s ease-in;
+      overflow-y: hidden;
+      top: 50px;
+      left: 0px;
+
+      z-index: 15;
+    }
+    .nav > .nav-links > a {
+      display: block;
+      width: 100%;
+      z-index: 15;
+    }
+    .nav > #nav-check:not(:checked) ~ .nav-links {
+      height: 0px;
+    }
+    .nav > #nav-check:checked ~ .nav-links {
+      height: calc(100vh - 50px);
+      overflow-y: auto;
+    }
+
+
+    .nav > .nav-links-light{
+         background-color: #eee !important;
+    } 
+  }
+
+  .nav > .nav-links > select {
+    outline: none;
+    height: 2rem;
+    padding-left: .5rem;
+    margin-right: .5rem;
+    cursor: pointer;
+  }
+
+  .nav-title-light{
+    color: #1a202c !important;
+  }
+
+  /* Loder */
+
+  .main-loader h3{
+    color: #fff;
+    font-family: 'Bruno Ace SC', cursive !important;
+    text-align: center;
+  }
+  .main-loader svg {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 150px;
+	width: 150px;
+}
+
+
+/* Loader Text */
+.loader{
+	/* background-color: #1a202c; */
+	padding: 0;
+	margin: 0;
+	height: 100vh;
+	width:100vw;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+
+    margin-top: 6rem !important;
+}
+
+.loader>span{
+	font-size: 60px;
+	font-family: "franklin gothic medium",sans-serif;
+	display: inline-block;
+	animation:flip 2.6s infinite linear;
+	transform-origin:0 70%;
+	transform-style:preserve-3d;
+	-webkit-transform-style:preserve-3d;
+}
+
+@keyframes flip{
+	35%{
+		transform: rotateX(360deg);
+	}
+	100%{
+		transform: rotatex(360deg);
+	}
+}
+
+
+.loader>span{
+	color:white;
+
+}
+
+.loader>span:nth-child(2){
+	animation-delay: 0.3s;
+}
+
+.loader>span:nth-child(3){
+	animation-delay: 0.6s;
+}
+
+.loader>span:nth-child(4){
+	animation-delay: 0.9s;
+}
+
+.loader>span:nth-child(5){
+	animation-delay: 1.2s;
+}
+
+.loader>span:nth-child(6){
+	animation-delay: 1.5s
+}
+
+.loader>span:nth-child(7){
+	animation-delay: 1.8s
+}  
+
+.loader>span:nth-child(8){
+	animation-delay: 2.1s
+}
+
+.loader>span:nth-child(9){
+	animation-delay: 2.4s
+}
+
+.loader>span:nth-child(10){
+	animation-delay: 2.7s
+}  
